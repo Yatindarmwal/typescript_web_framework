@@ -1,17 +1,9 @@
 import { User } from './models/User';
 
+const user = User.buildUser(({ id: 1 }));
 
-const user = new User({ id: 9, name: 'newer name ', age: 67 });
-
-// user.attributes.get('id');
-
-// user.sync.save();
-// user.on('change', () => {
-//     console.log('change triggered');
-// });
-
-user.on('save', () => {
+user.on('change', () => {
     console.log(user);
 });
 
-user.save();
+user.fetch();
