@@ -1,7 +1,7 @@
 import { Model } from './Model';
 import { Attributes } from './Attributes';
 import { ApiSync } from './ApiSync';
-import { Eventing } from './Eventing';
+import { Eventing } from './Everything';
 
 const rootURl = `http://localhost:3000/users`;
 
