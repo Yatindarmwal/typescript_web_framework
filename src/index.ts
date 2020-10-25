@@ -1,9 +1,12 @@
-import { Collection } from './models/Collection';
+import { UserEdit } from './views/UserEdit';
+import { User } from './models/User';
+const user = User.buildUser({ name: 'Yatin', age: 23 });
+const root = document.getElementById('root');
 
-const collection = new Collection('http://localhost:3000/users');
-
-collection.on('change', () => {
-    console.log(collection);
-});
-
-collection.fetch();
+if (root) {
+    const userEdit = new UserEdit(root, user);
+    userEdit.render();
+    console.log(userEdit);
+} else {
+    throw new Error('root element not found');
+}
